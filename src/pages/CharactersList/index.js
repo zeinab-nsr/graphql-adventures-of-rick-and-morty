@@ -1,29 +1,16 @@
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
+import useCharacters from "../../graphql/hooks/useCharacters";
 import "./styles/styles.css";
 
-const GET_CHARACTERS = gql`
-  query {
-    characters {
-      results {
-        id
-        name
-        image
-      }
-    }
-  }
-`
-
 export default function CharactersList() {
-  const { data, loading, error } = useQuery(GET_CHARACTERS);
-
+  const { data , loading } = useCharacters();
   return (
     <>
       {loading && <div>loading...</div>}
       {!loading && data && 
         <section className="characters-list">
           {data.characters.results.map((character) => (
-            <div key={character.id} >
+            <div className="list-item" key={character.id} >
               <img src={character.image} alt="avatar" />
               <h2>{character.name}</h2>
             </div>)
