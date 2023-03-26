@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useCharacters from "../../graphql/hooks/useCharacters";
 import "./styles/styles.css";
 
@@ -10,10 +11,13 @@ export default function CharactersList() {
       {!loading && data && 
         <section className="characters-list">
           {data.characters.results.map((character) => (
-            <div className="list-item" key={character.id} >
-              <img src={character.image} alt="avatar" />
-              <h2>{character.name}</h2>
-            </div>)
+            <Link to={`${character.id}`} key={character.id} >
+              <div className="list-item" >
+                <img src={character.image} alt="avatar" />
+                <h2>{character.name}</h2>
+              </div>
+            </Link>
+            )
           )}
         </section>
       }
