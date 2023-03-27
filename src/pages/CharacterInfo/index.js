@@ -9,38 +9,38 @@ export default function CharacterInfo() {
 
   if (loading) return;
 
-  if (error) {
-    return <div className="error">Something went wrong...</div>;
-  }
-
   const { image, name, gender, species, status } = data?.character || {};
 
   return (
     <section className="character-info-container">
-      <div className="character-info-card">
-        <figure className="character-info-row">
-          <img src={image} alt="avatar" />
-        </figure>
-        <section className="character-info-row">
-          <table>
-            <tr>
-              <th>Name:</th>
-              <td>{name}</td>
-            </tr>
-            <tr>
-              <th>gender:</th>
-              <td>{gender}</td>
-            </tr>
-            <tr>
-              <th>species:</th>
-              <td>{species}</td>
-            </tr>
-            <tr>
-              <th>status:</th>
-              <td>{status}</td>
-            </tr>
-          </table>
-        </section>
+        <div className="character-info-card">
+          {!error ? <>
+              <figure className="character-info-row">
+                <img src={image} alt="avatar" />
+              </figure>
+              <section className="character-info-row">
+                <table>
+                  <tr>
+                    <th>Name:</th>
+                    <td>{name}</td>
+                  </tr>
+                  <tr>
+                    <th>gender:</th>
+                    <td>{gender}</td>
+                  </tr>
+                  <tr>
+                    <th>species:</th>
+                    <td>{species}</td>
+                  </tr>
+                  <tr>
+                    <th>status:</th>
+                    <td>{status}</td>
+                  </tr>
+                </table>
+              </section>
+            </> :
+            <div className="error">Failed to load character data. Please try again later.</div>
+          }
       </div>
     </section>
   )
