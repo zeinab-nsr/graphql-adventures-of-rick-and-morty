@@ -1,4 +1,4 @@
-# Rick and Morty Characters
+# GraphQL Adventures of Rick and Morty Characters
 
 This project displays a list of characters from the Rick and Morty TV show, along with their information, using the GraphQL API provided by https://rickandmortyapi.com.
 
