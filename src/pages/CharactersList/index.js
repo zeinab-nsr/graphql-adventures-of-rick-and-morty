@@ -5,16 +5,18 @@ import "./styles/styles.css";
 
 export default function CharactersList() {
   const { data , loading } = useCharacters();
+
+  if (loading) return;
+
   return (
     <>
-      {loading && <div>loading...</div>}
-      {!loading && data && 
+      {data && 
         <section className="characters-list">
-          {data.characters.results.map((character) => (
-            <Link to={`${character.id}`} key={character.id} >
+          {data.characters.results.map(({ id, image, name }) => (
+            <Link to={`${id}`} key={id} >
               <div className="list-item" >
-                <img src={character.image} alt="avatar" />
-                <h2>{character.name}</h2>
+                <img src={image} alt="avatar" />
+                <h2>{name}</h2>
               </div>
             </Link>
             )
