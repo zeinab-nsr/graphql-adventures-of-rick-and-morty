@@ -6,18 +6,21 @@ import './styles/styles.css';
 export default function CharacterInfo() {
   const { id } = useParams();
   const { data , loading, error } = useCharacter(id);
-  
-  if (loading) return <div>Loading...</div>
-  if (error) return <div>error</div>
 
-  const { image, name, gender, species, status } = data?.character;
+  if (loading) return;
+
+  if (error) {
+    return <div className="error">Something went wrong...</div>;
+  }
+
+  const { image, name, gender, species, status } = data?.character || {};
 
   return (
     <section className="character-info-container">
       <div className="character-info-card">
-        <section className="character-info-row">
+        <figure className="character-info-row">
           <img src={image} alt="avatar" />
-        </section>
+        </figure>
         <section className="character-info-row">
           <table>
             <tr>
