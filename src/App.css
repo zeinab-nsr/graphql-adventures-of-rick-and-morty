@@ -1,4 +1,14 @@
 .App {
   padding: 2rem 0;
+  height: 100vh;
   font-family: sans-serif;
+  background-image: url('./assets/background.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }
