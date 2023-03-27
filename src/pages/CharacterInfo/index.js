@@ -14,28 +14,30 @@ export default function CharacterInfo() {
 
   return (
     <section className="character-info-container">
-      <div className="character-info-row">
-        <img src={image} alt="avatar" />
-      </div>
-      <div className="character-info-row">
-        <table>
-          <tr>
-            <th>Name:</th>
-            <td>{name}</td>
-          </tr>
-          <tr>
-            <th>gender:</th>
-            <td>{gender}</td>
-          </tr>
-          <tr>
-            <th>species:</th>
-            <td>{species}</td>
-          </tr>
-          <tr>
-            <th>status:</th>
-            <td>{status}</td>
-          </tr>
-        </table>
+      <div className="character-info-card">
+        <section className="character-info-row">
+          <img src={image} alt="avatar" />
+        </section>
+        <section className="character-info-row">
+          <table>
+            <tr>
+              <th>Name:</th>
+              <td>{name}</td>
+            </tr>
+            <tr>
+              <th>gender:</th>
+              <td>{gender}</td>
+            </tr>
+            <tr>
+              <th>species:</th>
+              <td>{species}</td>
+            </tr>
+            <tr>
+              <th>status:</th>
+              <td>{status}</td>
+            </tr>
+          </table>
+        </section>
       </div>
     </section>
   )

@@ -1,21 +1,33 @@
 .character-info-container {
   width: 80%;
   margin-left: 10%;
+}
+
+.character-info-card {
   display: flex;
   justify-content: center;
   flex-direction: row;
+  background-color: rgba(255, 255, 255, .6);
+  width: 100%;
+  padding: 2rem;
+  height: 500px;
+  align-items: center;
+  border-radius: 8px;
+  margin-top: 50%;
+  transform: translateY(-50%);
 }
 
 .character-info-row {
   width: 50%;
-  height: 100vh;
   display: flex;
   justify-content: center;
 }
 
 .character-info-row > img {
-  width: 100%;
-  align-self: center;
+  width: 90%;
+  border-radius: 8px;
+  max-height: 500px;
+  max-width: 500px;
 }
 
 table {
@@ -25,4 +37,5 @@ table {
   width: 100%;
   line-height: 40px;
   text-align: left;
+  font-size: 1.5rem;
 }
